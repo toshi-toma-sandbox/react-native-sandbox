@@ -12,8 +12,16 @@ const Stack = createStackNavigator();
 const BreedsScreen: () => React$Node = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={BreedsList.name} component={BreedsList.components} />
-      <Stack.Screen name={Breed.name} component={Breed.components} />
+      <Stack.Screen
+        name={BreedsList.name}
+        component={BreedsList.components}
+        options={{title: '犬種一覧'}}
+      />
+      <Stack.Screen
+        name={Breed.name}
+        component={Breed.components}
+        options={({route}) => ({title: route.params.breed})}
+      />
     </Stack.Navigator>
   );
 };

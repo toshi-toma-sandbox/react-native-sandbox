@@ -50,6 +50,7 @@ const BreedsList: () => React$Node = () => {
           </View>
         </TouchableOpacity>
       )}
+      keyExtractor={item => item}
     />
   );
 };

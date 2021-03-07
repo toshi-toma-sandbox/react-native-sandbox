@@ -16,7 +16,7 @@ const RandomList: () => React$Node = () => {
   const [dogs, setDogs] = useState(null);
   useEffect(() => {
     const fetchDogs = async () => {
-      const res = await fetch('https://dog.ceo/api/breeds/image/random/30');
+      const res = await fetch('https://dog.ceo/api/breeds/image/random/100');
       const {message} = await res.json();
       setDogs(message);
     };
@@ -44,6 +44,7 @@ const RandomList: () => React$Node = () => {
           />
         </View>
       )}
+      keyExtractor={item => item}
       contentContainerStyle={styles.list}
     />
   );

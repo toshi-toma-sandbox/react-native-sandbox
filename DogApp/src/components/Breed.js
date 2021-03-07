@@ -38,7 +38,6 @@ const Breed: () => React$Node = () => {
 
   return (
     <>
-      <Text style={styles.name}>{route.params.breed}</Text>
       <FlatList
         data={breed}
         renderItem={({item}) => (
@@ -52,6 +51,7 @@ const Breed: () => React$Node = () => {
             <Text style={styles.urlText}>{item}</Text>
           </View>
         )}
+        keyExtractor={item => item}
       />
     </>
   );
@@ -61,10 +61,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-  },
-  name: {
-    fontSize: 32,
-    textAlign: 'center',
   },
   item: {
     flexDirection: 'row',
